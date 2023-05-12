@@ -1,30 +1,36 @@
 var runnerList = [
-["Austria", "Who the Hell Is Edgar?",""],
-["Portugal", "Ai coração",""],
-["Switzerland","Watergun",""],
-["Poland","Solo",""],
-["Serbia","Samo mi se spava",""],
-["France","Évidemment",""],
-["Cyprus","Break a Broken Heart",""],
-["Spain","Eaea",""],
-["Sweden", "Tattoo",""],
-["Albania","Duje",""],
-["Italy","Due vite",""],
-["Estonia","Bridges",""],
-["Finland","Cha Cha Cha",""],
-["Czech Republic","My Sister's Crown",""],
-["Australia","Promise",""],
-["Belgium","Because of You",""],
-["Armenia","Future Lover",""],
-["Moldova", "Soarele și luna",""],
-["Ukraine", "Heart of Steel",""],
-["Norway", "Queen of Kings",""],
-["Germany", "Blood & Glitter",""],
-["Lithuania", "Stay",""],
-["Israel", "Unicorn",""],
-["Slovenia","Carpe Diem",""],
-["Croatia", "Mama ŠČ!",""],
-["United Kingdom", "I Wrote a Song",""]]
+["Austria - Who the Hell Is Edgar?","",""],
+["Portugal - Ai coração","",""],
+["Switzerland - Watergun","",""],
+["Poland - Solo","",""],
+["Serbia - Samo mi se spava","",""],
+["France - Évidemment","",""],
+["Cyprus - Break a Broken Heart","",""],
+["Spain - Eaea","",""],
+["Sweden - Tattoo","",""],
+["Albania - Duje","",""],
+["Italy - Due vite","",""],
+["Estonia - Bridges","",""],
+["Finland - Cha Cha Cha","",""],
+["Czech Republic - My Sister's Crown","",""],
+["Australia - Promise","",""],
+["Belgium - Because of You","",""],
+["Armenia - Future Lover","",""],
+["Moldova - Soarele și luna","",""],
+["Ukraine - Heart of Steel","",""],
+["Norway - Queen of Kings","",""],
+["Germany - Blood & Glitter","",""],
+["Lithuania - Stay","",""],
+["Israel - Unicorn","",""],
+["Slovenia - Carpe Diem","",""],
+["Croatia - Mama ŠČ!","",""],
+["United Kingdom - I Wrote a Song","",""]]
+
+window.addEventListener('beforeunload', function (e) {
+
+
+});
+
 
 for(i=0; i<runnerList.length; i++){
     createCountyRank(i+1,runnerList[i][0], runnerList[i][1], runnerList[i][2], "rankArea")
@@ -54,14 +60,15 @@ function createCountyRank(rankNum, country, songName, notes, id){
     div3.setAttribute("class", "div3")
 
     var div3_1 = document.createElement("div");
-    div3_1.innerHTML = country + " - " + songName;
+    div3_1.innerHTML = country ;
     div3.appendChild(div3_1);
     var input1 = document.createElement("input");
+    input1.value = songName;
     
     var textarea = document.createElement("textarea");
  
     textarea.value = notes;
-    div3.appendChild(input1)
+    div3.appendChild(input1);
     div3.appendChild(textarea);
 
  
@@ -95,3 +102,27 @@ function down(a){
 
     }
 }
+
+var country = [];
+var songName = [];
+var notes = [];
+
+function saveDataToLocalStorage(){
+    var data = document.getElementById("rankArea")
+    var country = [];
+    var songName = [];
+    var notes = [];
+    for (i = 0; i<data.children.length; i++){
+        country.push(data.children[i].children[2].children[0].textContent)
+        songName.push(data.children[i].children[2].children[1].value)
+        notes.push(data.children[i].children[2].children[2].value)
+    }
+    console.log(country);
+    console.log(songName);
+    console.log(notes);
+    localStorage.setItem("countryAndSong", country);
+    localStorage.setItem("aliasName", songName);
+    localStorage.setItem("yourNotes", notes);
+}
+
+saveDataToLocalStorage()
