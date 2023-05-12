@@ -44,3 +44,15 @@ button {
 textarea {
     resize: none;
 }
+
+form{
+    display: flex;
+}
+
+.saveButton{
+    top: 0;
+    position: sticky;
+    display: flex;
+    width: auto;
+    flex-grow: 1;
+}
