@@ -1,6 +1,6 @@
 var runnerList = [
-["Austria", "Who the Hell Is Edgar?","test"],
-["Portugal", "Ai coração","hey"],
+["Austria", "Who the Hell Is Edgar?",""],
+["Portugal", "Ai coração",""],
 ["Switzerland","Watergun",""],
 ["Poland","Solo",""],
 ["Serbia","Samo mi se spava",""],
