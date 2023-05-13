@@ -10,6 +10,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 .listItem {
@@ -50,9 +51,15 @@ form{
 }
 
 .saveButton{
+    padding: 5px 45px;
+
+}
+
+.saveArea{
+    display: flex;
     top: 0;
     position: sticky;
-    display: flex;
-    width: auto;
+    padding: 8px 8px;
+    background-color: #37373a;
     flex-grow: 1;
 }

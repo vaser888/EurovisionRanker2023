@@ -64,7 +64,7 @@ function createCountyRank(rankNum, country, songName, notes, id){
     div3.appendChild(textarea);
 
  
-    div.appendChild(form);
+    div.appendChild(div1);
     div.appendChild(div2);
     div.appendChild(div3);
     //div.appendChild(input);
